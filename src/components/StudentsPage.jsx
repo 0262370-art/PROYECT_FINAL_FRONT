@@ -25,6 +25,11 @@ export default function StudentsPage() {
     setMenuOpen(open);
   };
 
+  // esta constante es para dirigirte a otra pagina al momento de darle click en reservar
+  const handleNavigate = (path) => () => {
+    window.location.href = path;
+  };
+
   // contenido del menú lateral
   const drawerContent = (
     <Box
@@ -104,7 +109,10 @@ export default function StudentsPage() {
           <article className="students-card">
             <img src={cardEquip} alt="Cámara de video" />
             <div className="students-card-footer">
-              <button>Reservar equipo »»</button>
+              {/*este boton al darle click te va a llevar a la pagina de reservar equipo*/}
+              <button onClick={handleNavigate("/reservar-equipo")}> 
+              Reservar equipo »»
+              </button>
             </div>
           </article>
 
