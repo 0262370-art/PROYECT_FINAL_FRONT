@@ -12,9 +12,10 @@ export default function LandingPage() {
             <button className="landing-btn">Login UP Students</button>
           </Link>
 
-          <button className="landing-btn">
-            Login Administrators
-          </button>
+          <Link to="/Admin">
+            <button className="landing-btn">Login Administrators</button>
+          </Link>
+
         </section>
 
         <figure className="landing-image-wrapper">
