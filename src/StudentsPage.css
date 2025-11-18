@@ -1,0 +1,226 @@
+/* Fondo general */
+.students-root {
+    height: 100vh;
+    /* ocupa toda la altura visible */
+    width: 100vw;
+    /* ocupa todo el ancho visible */
+    background-color: #f4eee3;
+    display: flex;
+    flex-direction: column;
+
+
+}
+
+/* ========== HEADER ========== */
+
+.students-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.8rem 3rem;
+    background-color: #c49545;
+    /* dorado */
+}
+
+/* Menú hamburguesa */
+.students-menu-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.students-menu-btn span {
+    width: 26px;
+    height: 3px;
+    background-color: #1e1e1e;
+    border-radius: 2px;
+}
+
+/* Buscador */
+.students-search-wrapper {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    padding: 0 2rem;
+}
+
+.students-search-input {
+    width: 60%;
+    max-width: 480px;
+    border-radius: 999px;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    font-size: 0.95rem;
+}
+
+/* Avatar */
+.students-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 3px solid #000;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.students-avatar::before {
+    content: "";
+    position: absolute;
+    top: 6px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background-color: #000;
+}
+
+.students-avatar::after {
+    content: "";
+    position: absolute;
+    bottom: 4px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 26px;
+    height: 14px;
+    border-radius: 999px 999px 0 0;
+    background-color: #000;
+}
+
+/* ========== CONTENIDO ========== */
+
+.students-main {
+    flex: 1;
+    padding: 2rem 3rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+/* Banner grande */
+.students-hero img {
+    width: 1820px;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+}
+
+/* Tarjetas */
+.students-cards {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1.5rem;
+    justify-items: center;
+}
+
+.students-card {
+    background-color: #f7f7f7;
+    border-radius: 10px;
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    overflow: hidden;
+    width: 210px;
+    display: flex;
+    flex-direction: column;
+}
+
+.students-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+}
+
+/* Footer dentro de la tarjeta */
+.students-card-footer {
+    background-color: #f3f3f3;
+    padding: 0.7rem 1rem 1rem;
+    display: flex;
+    justify-content: center;
+}
+
+.students-card-footer button {
+    background-color: #ffffff;
+    border: none;
+    padding: 0.45rem 1rem;
+    border-radius: 4px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* ========== FOOTER ========== */
+
+.students-footer {
+    background-color: #8b0020;
+    /* rojo UP */
+    color: #ffffff;
+    padding: 0.7rem 3rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.students-footer-left {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+
+.students-shield-placeholder {
+    width: 40px;
+    height: 40px;
+    background-color: #f4eee3;
+    color: #8b0020;
+    font-size: 0.7rem;
+    font-weight: bold;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.students-footer-text span {
+    font-size: 0.85rem;
+}
+
+.students-footer-email {
+    border: none;
+    border-radius: 5px;
+    background-color: #f4eee3;
+    color: #8b0020;
+    padding: 0.4rem 1.3rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+}
+
+/* Responsive básico */
+@media (max-width: 900px) {
+    .students-cards {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .students-search-input {
+        width: 100%;
+    }
+}
+
+@media (max-width: 600px) {
+    .students-header {
+        padding: 0.7rem 1rem;
+    }
+
+    .students-main {
+        padding: 1.5rem 1rem 3rem;
+    }
+
+    .students-cards {
+        grid-template-columns: 1fr;
+    }
+
+
+
+}
