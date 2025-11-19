@@ -33,17 +33,13 @@
 /* Botones */
 .landing-btn {
     padding: 2rem 6rem;
-    /* MÁS ALTOS y MÁS LARGOS */
     border: 2px solid #3b4b6a;
     background-color: #ffffff;
     color: #3b4b6a;
     font-size: 1.1rem;
-    /* texto más grande */
     font-weight: 500;
-    /* un poquito más grueso */
     cursor: pointer;
     border-radius: 6px;
-    /* más suave */
     transition:
         transform 0.15s ease,
         box-shadow 0.15s ease,

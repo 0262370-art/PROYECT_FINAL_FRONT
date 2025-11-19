@@ -1,17 +1,19 @@
 /* Fondo general */
 .students-root {
-    height: 100vh;
-    /* ocupa toda la altura visible */
-    width: 100vw;
-    /* ocupa todo el ancho visible */
+    min-height: 100vh;
     background-color: #f4eee3;
     display: flex;
     flex-direction: column;
+}
 
-    /* layout variables to help pages fit viewport */
+
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
     --header-h: 72px;
     --footer-h: 72px;
-
+    --site-max-w: 1200px;
+    --site-side-pad: 1.5rem;
 }
 
 /* ========== HEADER ========== */
@@ -20,9 +22,8 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.6rem 2rem;
+    padding: 0.6rem 1.5rem;
     background-color: #c49545;
-    /* dorado */
     height: var(--header-h);
 }
 
@@ -48,17 +49,47 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    padding: 0 2rem;
+    padding: 0 1rem;
+    position: relative;
 }
 
 .students-search-input {
-    width: 60%;
-    max-width: 480px;
+    width: 100%;
+    max-width: 420px;
     border-radius: 999px;
     border: none;
-    padding: 0.6rem 1.2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem 1rem;
+    padding-left: 2.4rem; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
     font-size: 0.95rem;
+    background-color: #ffffff; 
+    color: #1e1e1e;
+}
+
+.students-search-input::placeholder {
+    color: rgba(0,0,0,0.45);
+}
+
+.students-search-icon {
+    position: absolute;
+    left: calc(50% - 210px + 12px); 
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: rgba(0,0,0,0.6);
+    font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .students-search-icon {
+        left: calc(50% - 180px + 10px);
+    }
+}
+
+@media (max-width: 600px) {
+    .students-search-icon {
+        left: 12px;
+    }
 }
 
 /* Avatar */
@@ -99,43 +130,62 @@
 
 .students-main {
     flex: 1;
-    padding: 2rem 3rem 3.5rem;
+    padding: 2rem var(--site-side-pad) 3.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+    max-width: var(--site-max-w);
+    margin: 0 auto;
 }
 
 /* Banner grande */
 .students-hero img {
-    width: 1820px;
-    height: 250px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/4;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    display: block;
 }
 
 /* Tarjetas */
 .students-cards {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+    width: 100%;
 }
 
 .students-card {
     background-color: #f7f7f7;
     border-radius: 10px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    width: 210px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    min-height: 280px; 
 }
 
 .students-card img {
     width: 100%;
-    height: 190px;
+    height: 210px; 
     object-fit: cover;
+}
+
+
+
+@media (max-width: 600px) {
+    .students-cards > .students-card:nth-last-child(-n+4) {
+        min-height: 260px;
+    }
+
+    .students-cards > .students-card:nth-last-child(-n+4) img {
+        height: 200px;
+    }
 }
 
 /* Footer dentro de la tarjeta */
@@ -224,7 +274,7 @@
     font-size: 0.9rem;
 }
 
-/* Botón de volver (usado en ReservarEquipoPage) */
+/* Botón de volver  */
 .students-back-btn {
     background: none;
     border: none;
@@ -241,33 +291,27 @@
 
 /* Responsive básico */
 @media (max-width: 900px) {
-    .students-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .students-search-input {
-        width: 100%;
-    }
+    .students-main { padding: 1.5rem 1rem 2.5rem; }
+    .students-search-input { max-width: 360px; }
 }
 
 @media (max-width: 600px) {
-    .students-header {
-        padding: 0.7rem 1rem;
-    }
-
-    .students-main {
-        padding: 1.5rem 1rem 3rem;
-    }
-
-    .students-cards {
-        grid-template-columns: 1fr;
-    }
-
-
-
+    .students-header { padding: 0.6rem 0.8rem; }
+    .students-main { padding: 1rem 0.75rem 2rem; }
+    .students-cards { grid-template-columns: 1fr; }
+    .students-card img { height: 180px; }
+    .students-card { min-height: 240px; }
 }
-
 /* Make whole page background consistent to avoid thin gaps showing different color */
 html, body {
+    margin: 0;
+    padding: 0;
     background-color: #f4eee3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: clamp(14px, 1.2vw, 16px);
+}
+
+#root {
+    width: 100%;
 }

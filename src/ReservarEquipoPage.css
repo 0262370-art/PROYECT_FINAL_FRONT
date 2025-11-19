@@ -1,4 +1,4 @@
-/* Styles for ReservarEquipoPage gallery */
+/*  ReservarEquipoPage */
 .reservar-gallery {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
@@ -9,14 +9,11 @@
 	width: 100%;
 	max-width: 1200px;
 	padding: 0 1.5rem;
-	/* Make gallery fill remaining vertical space between header and footer */
-	height: calc(100vh - var(--header-h) - var(--footer-h) - 2.5rem);
-	grid-template-rows: repeat(2, 1fr);
+	
 }
 
 .reservar-card-box {
 	width: 320px;
-	/* fill the grid row height */
 	height: 100%;
 	background: #ffffff;
 	border-radius: 12px;
@@ -25,8 +22,7 @@
 	justify-content: center;
 	padding: 18px;
 	box-shadow: 0 8px 30px rgba(0,0,0,0.18);
-		/* default cursor; pointer only on hover */
-		cursor: default;
+	cursor: default;
 }
 
 .reservar-card-img {
@@ -37,11 +33,9 @@
 	object-fit: contain;
 	border-radius: 10px;
 	display: block;
-	/* no shadow on the image; shadow is applied to the big white card (.reservar-card-box) */
 	box-shadow: none;
 }
 
-/* Hover effect: only change cursor to pointer */
 .reservar-card-box:hover {
 	cursor: pointer;
 }
@@ -49,10 +43,10 @@
 .reservar-label {
 	background: #e6e6e6;
 	color: #222;
-	padding: 8px 16px; /* slightly larger */
-	border-radius: 6px; /* a bit more rounded */
+	padding: 8px 16px; 
+	border-radius: 6px;
 	font-weight: 600;
-	font-size: 1rem; /* slightly larger text */
+	font-size: 1rem; 
 	box-shadow: 0 1px 0 rgba(0,0,0,0.06) inset;
 	margin-top: 10px;
 	margin-bottom: 12px;

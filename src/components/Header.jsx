@@ -5,7 +5,7 @@ import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import "../StudentsPage.css"; // reutilizamos estilos existentes del header
+import "../StudentsPage.css"; // reutilizamos estilos del header
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -55,10 +55,12 @@ export default function Header() {
       </button>
 
       <div className="students-search-wrapper">
+        <span className="students-search-icon" aria-hidden>🔍</span>
         <input
           className="students-search-input"
           type="text"
           placeholder="Search..."
+          aria-label="Buscar"
         />
       </div>
 

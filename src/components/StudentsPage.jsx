@@ -49,7 +49,7 @@ export default function StudentsPage() {
             <div className="students-card-footer">
               {/*este boton al darle click te va a llevar a la pagina de reservar equipo*/}
               <button onClick={handleNavigate("/reservar-equipo")}> 
-              Reservar equipo »»
+                Reservar equipo »»
               </button>
             </div>
           </article>
@@ -57,21 +57,21 @@ export default function StudentsPage() {
           <article className="students-card">
             <img src={cardSalon} alt="Set de grabación" />
             <div className="students-card-footer">
-              <button>Reservar salones »»</button>
+              <button onClick={handleNavigate("/reservar-salones")}>Reservar salones »»</button>
             </div>
           </article>
 
           <article className="students-card">
             <img src={cardMisRes} alt="Claqueta" />
             <div className="students-card-footer">
-              <button>Mis reservas »»</button>
+              <button onClick={handleNavigate("/mis-reservas")}>Mis reservas »»</button>
             </div>
           </article>
 
           <article className="students-card">
             <img src={cardFaq} alt="Frequent Asked Questions" />
             <div className="students-card-footer">
-              <button>FAQ’s »»</button>
+              <button onClick={handleNavigate("/faqs")}>FAQ’s »»</button>
             </div>
           </article>
         </section>
