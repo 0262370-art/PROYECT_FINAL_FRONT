@@ -8,6 +8,9 @@
     display: flex;
     flex-direction: column;
 
+    /* layout variables to help pages fit viewport */
+    --header-h: 72px;
+    --footer-h: 72px;
 
 }
 
@@ -17,9 +20,10 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.8rem 3rem;
+    padding: 0.6rem 2rem;
     background-color: #c49545;
     /* dorado */
+    height: var(--header-h);
 }
 
 /* Menú hamburguesa */
@@ -150,6 +154,7 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     font-size: 0.85rem;
     cursor: pointer;
+    color: #1e1e1e;
 }
 
 /* ========== FOOTER ========== */
@@ -158,10 +163,13 @@
     background-color: #8b0020;
     /* rojo UP */
     color: #ffffff;
-    padding: 0.7rem 3rem;
+    padding: 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: var(--footer-h);
+    position: relative;
+    z-index: 10;
 }
 
 .students-footer-left {
@@ -171,13 +179,13 @@
 }
 
 .students-shield-placeholder {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     background-color: #f4eee3;
     color: #8b0020;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,14 +195,48 @@
     font-size: 0.85rem;
 }
 
-.students-footer-email {
-    border: none;
-    border-radius: 5px;
+
+.students-footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.students-email-input {
     background-color: #f4eee3;
+    border-radius: 20px;
+    padding: 0.28rem 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.03);
+}
+
+.students-email-input .students-email-icon {
+    font-size: 0.95rem;
     color: #8b0020;
-    padding: 0.4rem 1.3rem;
-    font-size: 0.85rem;
+}
+
+.students-email-input input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #8b0020;
+    font-size: 0.9rem;
+}
+
+/* Botón de volver (usado en ReservarEquipoPage) */
+.students-back-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-right: 0.6rem;
     cursor: pointer;
+    padding: 0.2rem 0.5rem;
+}
+
+.students-back-btn:hover {
+    opacity: 0.9;
 }
 
 /* Responsive básico */
@@ -223,4 +265,9 @@
 
 
 
+}
+
+/* Make whole page background consistent to avoid thin gaps showing different color */
+html, body {
+    background-color: #f4eee3;
 }
