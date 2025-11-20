@@ -1,14 +1,17 @@
+// src/components/Header.jsx
 import React, { useState } from "react";
-import Box from "@mui/material/Box";
+import { useNavigate } from "react-router-dom";
 import Drawer from "@mui/material/Drawer";
+import Box from "@mui/material/Box";
 import List from "@mui/material/List";
 import ListItem from "@mui/material/ListItem";
 import ListItemButton from "@mui/material/ListItemButton";
 import ListItemText from "@mui/material/ListItemText";
-import "../StudentsPage.css"; // reutilizamos estilos del header
+import "../StudentsPage.css";
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
+  const navigate = useNavigate();
 
   const toggleDrawer = (open) => () => {
     setMenuOpen(open);
@@ -28,13 +31,13 @@ export default function Header() {
     >
       <List>
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate("/reservar-equipo")}>
             <ListItemText primary="Equipo" />
           </ListItemButton>
         </ListItem>
 
         <ListItem disablePadding>
-          <ListItemButton>
+          <ListItemButton onClick={() => navigate("/reservar-salones")}>
             <ListItemText primary="Salones" />
           </ListItemButton>
         </ListItem>
@@ -44,6 +47,7 @@ export default function Header() {
 
   return (
     <header className="students-header">
+      {/* HAMBURGUESA */}
       <button
         className="students-menu-btn"
         aria-label="Menú"
@@ -54,17 +58,23 @@ export default function Header() {
         <span />
       </button>
 
+      {/* BUSCADOR */}
       <div className="students-search-wrapper">
-        <span className="students-search-icon" aria-hidden>🔍</span>
+        <span className="students-search-icon">🔍</span>
         <input
           className="students-search-input"
           type="text"
           placeholder="Search..."
-          aria-label="Buscar"
         />
       </div>
 
-      <div className="students-avatar" aria-label="Perfil" />
+      {/* AVATAR ORIGINAL (FUNCIONA) */}
+      <button
+        className="students-avatar-btn"
+        onClick={() => navigate("/perfil")}
+      >
+        <div className="students-avatar" />
+      </button>
 
       <Drawer anchor="left" open={menuOpen} onClose={toggleDrawer(false)}>
         {drawerContent}

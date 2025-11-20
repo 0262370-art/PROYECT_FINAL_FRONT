@@ -92,7 +92,6 @@
     }
 }
 
-/* Avatar */
 .students-avatar {
     width: 44px;
     height: 44px;
@@ -125,6 +124,7 @@
     border-radius: 999px 999px 0 0;
     background-color: #000;
 }
+
 
 /* ========== CONTENIDO ========== */
 
@@ -314,4 +314,280 @@ html, body {
 
 #root {
     width: 100%;
+}
+
+
+
+
+/* ================== PÁGINA DE PERFIL ================== */
+
+.profile-root {
+  min-height: 100vh;
+  background-color: #f4eee3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 3rem 4rem;
+  box-sizing: border-box;
+}
+
+/* contenedor principal */
+.profile-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(420px, 560px);
+  gap: 3rem;
+  width: 100%;
+  max-width: 1100px;
+  align-items: center;
+}
+
+/* columna izquierda */
+
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+/* avatar grande tipo ícono */
+
+.profile-avatar-big {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 30px solid #000;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.profile-avatar-big::before {
+  content: "";
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #f4eee3;
+}
+
+.profile-avatar-big::after {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 90px;
+  border-radius: 0 0 999px 999px;
+  background: #000;
+}
+
+/* texto “Detalles del perfil” */
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.5rem;
+  color: #1d3242;
+}
+
+.profile-details h1 {
+  margin: 0;
+}
+
+.profile-pencil {
+  font-size: 1.6rem;
+}
+
+/* botón de regresar */
+
+.profile-return-btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  border: 1px solid #3b4b6a;
+  background-color: #ffffff;
+  color: #3b4b6a;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.profile-return-btn:hover {
+  background-color: #f4f6ff;
+}
+
+/* columna derecha */
+
+.profile-right {
+  display: flex;
+  justify-content: center;
+}
+
+/* tarjeta de reservas */
+
+.profile-card {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 10px;
+  border: 1px solid #e2d5c4;
+  padding: 1.3rem 1.6rem 1.8rem;
+  background-color: #f7f1e5;
+  box-sizing: border-box;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.profile-card-header {
+  background-color: #fbf6ec;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.profile-bell {
+  position: absolute;
+  right: 1rem;
+  top: 0.65rem;
+}
+
+.profile-section {
+  margin-bottom: 1rem;
+}
+
+/* acordeones */
+
+.profile-accordion {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #f1e5d3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+  font-size: 0.95rem;
+}
+
+.profile-accordion-open {
+  background-color: #fbf6ec;
+}
+
+.profile-accordion-body {
+  padding: 0.7rem 1rem 0.9rem;
+  font-size: 0.85rem;
+  color: #555;
+  background-color: #fbf6ec;
+  border-radius: 0 0 6px 6px;
+}
+
+.profile-arrow {
+  font-size: 0.8rem;
+}
+
+.profile-plus {
+  font-size: 1.1rem;
+}
+
+/* advertencias */
+
+.profile-section h2 {
+  font-size: 0.95rem;
+  margin: 0 0 0.4rem;
+}
+
+.profile-warning-box {
+  display: flex;
+  gap: 0.9rem;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  font-size: 0.85rem;
+  color: #444;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+.profile-warning-bar {
+  width: 3px;
+  border-radius: 999px;
+  background-color: #4a6cff;
+}
+
+/* flecha salida */
+
+.profile-exit-btn {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.2rem;
+  background: #f7f1e5;
+  border: 1px solid #3b4b6a;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+
+.profile-exit-btn:hover {
+  background-color: #ffffff;
+}
+
+/* responsive */
+
+@media (max-width: 980px) {
+  .profile-root {
+    padding: 2.2rem 1.6rem 3rem;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .profile-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-return-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-avatar-big {
+    width: 190px;
+    height: 190px;
+    border-width: 24px;
+  }
+
+  .profile-details {
+    font-size: 1.6rem;
+  }
+
+  .profile-root {
+    padding: 1.8rem 1.2rem 2.5rem;
+  }
+
+  .profile-exit-btn {
+    right: 1.4rem;
+    bottom: 1.6rem;
+  }
+}
+
+/* botón del monito en el header */
+.students-avatar-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
 }
