@@ -1,0 +1,59 @@
+/* CONTENEDOR */
+.faq-container {
+  display: flex;
+  justify-content: space-between;
+  gap: 60px;
+  padding: 40px 80px;
+}
+
+/* COLUMNA IZQUIERDA */
+.faq-title {
+  color: #d4af37 !important;   /* ORO */
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.faq-description {
+  color: #5c5c5c !important;
+  max-width: 500px;
+}
+
+/* PREGUNTAS */
+.faq-question-text {
+  color: #d4af37 !important;   /* ORO */
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.faq-item {
+  background: white;
+  border-radius: 8px;
+  padding: 18px 22px;
+  margin-bottom: 15px;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.faq-item:hover {
+  background: #f6f1e7;
+}
+
+.faq-question {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-answer {
+  margin-top: 12px;
+  color: #333 !important;
+}
+
+/* Previene que StudentsPage.css lo haga transparente */
+.faq-item,
+.faq-question,
+.faq-answer,
+.faq-left,
+.faq-right {
+  opacity: 1 !important;
+}
