@@ -1,14 +1,19 @@
 /* Fondo general */
 .admin-root {
-    height: 100vh;
-    /* ocupa toda la altura visible */
-    width: 100vw;
-    /* ocupa todo el ancho visible */
+    min-height: 100vh;
     background-color: #f4eee3;
     display: flex;
     flex-direction: column;
+}
 
 
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --header-h: 72px;
+    --footer-h: 72px;
+    --site-max-w: 1200px;
+    --site-side-pad: 1.5rem;
 }
 
 /* ========== HEADER ========== */
@@ -17,9 +22,9 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0.8rem 3rem;
+    padding: 0.6rem 1.5rem;
     background-color: #c49545;
-    /* dorado */
+    height: var(--header-h);
 }
 
 /* Menú hamburguesa */
@@ -44,20 +49,49 @@
     flex: 1;
     display: flex;
     justify-content: center;
-    padding: 0 2rem;
+    padding: 0 1rem;
+    position: relative;
 }
 
 .admin-search-input {
-    width: 60%;
-    max-width: 480px;
+    width: 100%;
+    max-width: 420px;
     border-radius: 999px;
     border: none;
-    padding: 0.6rem 1.2rem;
-    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    padding: 0.5rem 1rem;
+    padding-left: 2.4rem; 
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
     font-size: 0.95rem;
+    background-color: #ffffff; 
+    color: #1e1e1e;
 }
 
-/* Avatar */
+.admin-search-input::placeholder {
+    color: rgba(0,0,0,0.45);
+}
+
+.admin-search-icon {
+    position: absolute;
+    left: calc(50% - 210px + 12px); 
+    top: 50%;
+    transform: translateY(-50%);
+    pointer-events: none;
+    color: rgba(0,0,0,0.6);
+    font-size: 1rem;
+}
+
+@media (max-width: 900px) {
+    .admin-search-icon {
+        left: calc(50% - 180px + 10px);
+    }
+}
+
+@media (max-width: 600px) {
+    .admin-search-icon {
+        left: 12px;
+    }
+}
+
 .admin-avatar {
     width: 44px;
     height: 44px;
@@ -91,47 +125,67 @@
     background-color: #000;
 }
 
+
 /* ========== CONTENIDO ========== */
 
 .admin-main {
     flex: 1;
-    padding: 2rem 3rem 3.5rem;
+    padding: 2rem var(--site-side-pad) 3.5rem;
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    width: 100%;
+    max-width: var(--site-max-w);
+    margin: 0 auto;
 }
 
 /* Banner grande */
 .admin-hero img {
-    width: 1820px;
-    height: 250px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16/4;
     object-fit: cover;
     border-radius: 8px;
-    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+    display: block;
 }
 
 /* Tarjetas */
 .admin-cards {
     display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 1.5rem;
-    justify-items: center;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+    align-items: stretch;
+    width: 100%;
 }
 
 .admin-card {
     background-color: #f7f7f7;
     border-radius: 10px;
-    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.08);
     overflow: hidden;
-    width: 210px;
+    width: 100%;
     display: flex;
     flex-direction: column;
+    min-height: 280px; 
 }
 
 .admin-card img {
     width: 100%;
-    height: 190px;
+    height: 210px; 
     object-fit: cover;
+}
+
+
+
+@media (max-width: 600px) {
+    .admin-cards > .admin-card:nth-last-child(-n+4) {
+        min-height: 260px;
+    }
+
+    .admin-cards > .admin-card:nth-last-child(-n+4) img {
+        height: 200px;
+    }
 }
 
 /* Footer dentro de la tarjeta */
@@ -150,6 +204,7 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
     font-size: 0.85rem;
     cursor: pointer;
+    color: #1e1e1e;
 }
 
 /* ========== FOOTER ========== */
@@ -158,10 +213,13 @@
     background-color: #8b0020;
     /* rojo UP */
     color: #ffffff;
-    padding: 0.7rem 3rem;
+    padding: 0.5rem 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    height: var(--footer-h);
+    position: relative;
+    z-index: 10;
 }
 
 .admin-footer-left {
@@ -171,13 +229,13 @@
 }
 
 .admin-shield-placeholder {
-    width: 40px;
-    height: 40px;
+    width: 48px;
+    height: 48px;
     background-color: #f4eee3;
     color: #8b0020;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
     font-weight: bold;
-    border-radius: 4px;
+    border-radius: 6px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -187,40 +245,349 @@
     font-size: 0.85rem;
 }
 
-.admin-footer-email {
-    border: none;
-    border-radius: 5px;
+
+.admin-footer-right {
+    display: flex;
+    align-items: center;
+}
+
+.admin-email-input {
     background-color: #f4eee3;
+    border-radius: 20px;
+    padding: 0.28rem 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    box-shadow: inset 0 1px 0 rgba(0,0,0,0.03);
+}
+
+.admin-email-input .students-email-icon {
+    font-size: 0.95rem;
     color: #8b0020;
-    padding: 0.4rem 1.3rem;
-    font-size: 0.85rem;
+}
+
+.admin-email-input input {
+    border: none;
+    background: transparent;
+    outline: none;
+    color: #8b0020;
+    font-size: 0.9rem;
+}
+
+/* Botón de volver  */
+.admin-back-btn {
+    background: none;
+    border: none;
+    color: #ffffff;
+    font-size: 1.1rem;
+    margin-right: 0.6rem;
     cursor: pointer;
+    padding: 0.2rem 0.5rem;
+}
+
+.admin-back-btn:hover {
+    opacity: 0.9;
 }
 
 /* Responsive básico */
 @media (max-width: 900px) {
-    .admin-cards {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .admin-search-input {
-        width: 100%;
-    }
+    .admin-main { padding: 1.5rem 1rem 2.5rem; }
+    .admin-search-input { max-width: 360px; }
 }
 
 @media (max-width: 600px) {
-    .admin-header {
-        padding: 0.7rem 1rem;
-    }
+    .admin-header { padding: 0.6rem 0.8rem; }
+    .admin-main { padding: 1rem 0.75rem 2rem; }
+    .admin-cards { grid-template-columns: 1fr; }
+    .admin-card img { height: 180px; }
+    .admin-card { min-height: 240px; }
+}
+/* Make whole page background consistent to avoid thin gaps showing different color */
+html, body {
+    margin: 0;
+    padding: 0;
+    background-color: #f4eee3;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-size: clamp(14px, 1.2vw, 16px);
+}
 
-    .admin-main {
-        padding: 1.5rem 1rem 3rem;
-    }
-
-    .admin-cards {
-        grid-template-columns: 1fr;
-    }
+#root {
+    width: 100%;
+}
 
 
 
+
+/* ================== PÁGINA DE PERFIL ================== */
+
+.profile-root {
+  min-height: 100vh;
+  background-color: #f4eee3;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 3rem 3rem 4rem;
+  box-sizing: border-box;
+}
+
+/* contenedor principal */
+.profile-layout {
+  display: grid;
+  grid-template-columns: minmax(260px, 360px) minmax(420px, 560px);
+  gap: 3rem;
+  width: 100%;
+  max-width: 1100px;
+  align-items: center;
+}
+
+/* columna izquierda */
+
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1.5rem;
+}
+
+/* avatar grande tipo ícono */
+
+.profile-avatar-big {
+  width: 230px;
+  height: 230px;
+  border-radius: 50%;
+  border: 30px solid #000;
+  box-sizing: border-box;
+  position: relative;
+}
+
+.profile-avatar-big::before {
+  content: "";
+  position: absolute;
+  top: 45px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  background: #f4eee3;
+}
+
+.profile-avatar-big::after {
+  content: "";
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 180px;
+  height: 90px;
+  border-radius: 0 0 999px 999px;
+  background: #000;
+}
+
+/* texto “Detalles del perfil” */
+
+.profile-details {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  font-size: 0.5rem;
+  color: #1d3242;
+}
+
+.profile-details h1 {
+  margin: 0;
+}
+
+.profile-pencil {
+  font-size: 1.6rem;
+}
+
+/* botón de regresar */
+
+.profile-return-btn {
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.6rem;
+  border-radius: 6px;
+  border: 1px solid #3b4b6a;
+  background-color: #ffffff;
+  color: #3b4b6a;
+  font-size: 0.9rem;
+  cursor: pointer;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.12);
+}
+
+.profile-return-btn:hover {
+  background-color: #f4f6ff;
+}
+
+/* columna derecha */
+
+.profile-right {
+  display: flex;
+  justify-content: center;
+}
+
+/* tarjeta de reservas */
+
+.profile-card {
+  width: 100%;
+  max-width: 540px;
+  border-radius: 10px;
+  border: 1px solid #e2d5c4;
+  padding: 1.3rem 1.6rem 1.8rem;
+  background-color: #f7f1e5;
+  box-sizing: border-box;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.12);
+}
+
+.profile-card-header {
+  background-color: #fbf6ec;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  text-align: center;
+  font-weight: 500;
+  margin-bottom: 1.2rem;
+  position: relative;
+}
+
+.profile-bell {
+  position: absolute;
+  right: 1rem;
+  top: 0.65rem;
+}
+
+.profile-section {
+  margin-bottom: 1rem;
+}
+
+/* acordeones */
+
+.profile-accordion {
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border-radius: 6px;
+  border: none;
+  background-color: #f1e5d3;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: default;
+  font-size: 0.95rem;
+}
+
+.profile-accordion-open {
+  background-color: #fbf6ec;
+}
+
+.profile-accordion-body {
+  padding: 0.7rem 1rem 0.9rem;
+  font-size: 0.85rem;
+  color: #555;
+  background-color: #fbf6ec;
+  border-radius: 0 0 6px 6px;
+}
+
+.profile-arrow {
+  font-size: 0.8rem;
+}
+
+.profile-plus {
+  font-size: 1.1rem;
+}
+
+/* advertencias */
+
+.profile-section h2 {
+  font-size: 0.95rem;
+  margin: 0 0 0.4rem;
+}
+
+.profile-warning-box {
+  display: flex;
+  gap: 0.9rem;
+  background-color: #ffffff;
+  border-radius: 6px;
+  padding: 0.8rem 1rem;
+  font-size: 0.85rem;
+  color: #444;
+  box-shadow: inset 0 1px 0 rgba(0, 0, 0, 0.03);
+}
+
+.profile-warning-bar {
+  width: 3px;
+  border-radius: 999px;
+  background-color: #4a6cff;
+}
+
+/* flecha salida */
+
+.profile-exit-btn {
+  position: fixed;
+  right: 2.5rem;
+  bottom: 2.2rem;
+  background: #f7f1e5;
+  border: 1px solid #3b4b6a;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+}
+
+.profile-exit-btn:hover {
+  background-color: #ffffff;
+}
+
+/* responsive */
+
+@media (max-width: 980px) {
+  .profile-root {
+    padding: 2.2rem 1.6rem 3rem;
+  }
+
+  .profile-layout {
+    grid-template-columns: 1fr;
+    gap: 2.2rem;
+  }
+
+  .profile-left {
+    align-items: center;
+    text-align: center;
+  }
+
+  .profile-return-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .profile-avatar-big {
+    width: 190px;
+    height: 190px;
+    border-width: 24px;
+  }
+
+  .profile-details {
+    font-size: 1.6rem;
+  }
+
+  .profile-root {
+    padding: 1.8rem 1.2rem 2.5rem;
+  }
+
+  .profile-exit-btn {
+    right: 1.4rem;
+    bottom: 1.6rem;
+  }
+}
+
+/* botón del monito en el header */
+.students-avatar-btn {
+  border: none;
+  background: none;
+  padding: 0;
+  cursor: pointer;
 }

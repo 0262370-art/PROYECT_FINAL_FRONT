@@ -1,14 +1,11 @@
 // src/components/StudentsPage.jsx
-import { useState } from "react";
+import React from "react";
+import { useNavigate } from "react-router-dom";
 import "../AdminPage.css";
+import Header from "./Header";
 
 // MUI
-import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemText from "@mui/material/ListItemText";
-import Box from "@mui/material/Box";
+// MUI imports moved into Header component
 
 // IMPORTA TUS IMÁGENES REALES AQUÍ
 import heroImg from "../assets/bannergrande.png";        // banner grande
@@ -17,80 +14,26 @@ import cardSalon from "../assets/reservasalones.png";    // reservar salones
 import cardMisRes from "../assets/misreservas.png";      // mis reservas
 import cardFaq from "../assets/FAQS.png";                // FAQs
 
-export default function AdminPage() {
-  // estado para abrir/cerrar el drawer
-  const [menuOpen, setMenuOpen] = useState(false);
+export default function StudentsPage() {
 
-  const toggleDrawer = (open) => () => {
-    setMenuOpen(open);
+  const navigate = useNavigate();
+
+  // esta constante es para dirigirte a otra pagina al momento de darle click en reservar
+  const handleNavigate = (path) => () => {
+    navigate(path);
   };
 
-  // contenido del menú lateral
-  const drawerContent = (
-    <Box
-      sx={{
-        width: 220,                // ancho del contenedor
-        bgcolor: "#e3dbcf",
-        height: "100%",
-        pt: 4
-      }}
-      role="presentation"
-      onClick={toggleDrawer(false)}
-      onKeyDown={toggleDrawer(false)}
-    >
-      <List>
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemText primary="Equipo" />
-          </ListItemButton>
-        </ListItem>
-
-        <ListItem disablePadding>
-          <ListItemButton>
-            <ListItemText primary="Salones" />
-          </ListItemButton>
-        </ListItem>
-      </List>
-    </Box>
-  );
+  
 
   return (
     <div className="admin-root">
-      {/* HEADER */}
-      <header className="admin-header">
-        <button
-          className="admin-menu-btn"
-          aria-label="Menú"
-          onClick={toggleDrawer(true)}   // 👈 abre el drawer
-        >
-          <span />
-          <span />
-          <span />
-        </button>
-
-        <div className="admin-search-wrapper">
-          <input
-            className="admin-search-input"
-            type="text"
-            placeholder="Search..."
-          />
-        </div>
-
-        <div className="admin-avatar" aria-label="Perfil" />
-      </header>
+      <Header />
 
 
 
 
 
-      {/* DRAWER DE MUI */}
-      <Drawer
-        anchor="left"          // 👉 si lo quieres del lado derecho, cambia a "right"
-        open={menuOpen}
-        onClose={toggleDrawer(false)}
-      >
-        {drawerContent}
-      </Drawer>
+      {/* El drawer ahora se maneja dentro de Header */}
 
       {/* CONTENIDO PRINCIPAL */}
       <main className="admin-main">
@@ -104,28 +47,31 @@ export default function AdminPage() {
           <article className="admin-card">
             <img src={cardEquip} alt="Cámara de video" />
             <div className="admin-card-footer">
-              <button>Reservar peticiones »»</button>
+              {/*este boton al darle click te va a llevar a la pagina de reservar equipo*/}
+              <button onClick={handleNavigate("/admin-peticiones")}> 
+                Reservar Peticiones »»
+              </button>
             </div>
           </article>
 
           <article className="admin-card">
             <img src={cardSalon} alt="Set de grabación" />
             <div className="admin-card-footer">
-              <button>Agregar productos »»</button>
+              <button onClick={handleNavigate("/reservar-salones")}> Agregar productos »»</button>
             </div>
           </article>
 
           <article className="admin-card">
             <img src={cardMisRes} alt="Claqueta" />
             <div className="admin-card-footer">
-              <button>Perfiles »»</button>
+              <button onClick={handleNavigate("/mis-reservas")}>Perfiles »»</button>
             </div>
           </article>
 
           <article className="admin-card">
             <img src={cardFaq} alt="Frequent Asked Questions" />
             <div className="admin-card-footer">
-              <button>Agregar salones »»</button>
+              <button onClick={handleNavigate("/faqs")}>Agregar salones »»</button>
             </div>
           </article>
         </section>
@@ -135,6 +81,7 @@ export default function AdminPage() {
 
 
       {/* FOOTER */}
+      {/* FOOTER */}
       <footer className="admin-footer">
         <div className="admin-footer-left">
           <div className="admin-shield-placeholder">LOGO</div>
@@ -143,9 +90,12 @@ export default function AdminPage() {
           </div>
         </div>
 
-        <button className="admin-footer-email">
-          prestamocom@up.edu.mx
-        </button>
+        <div className="admin-footer-right">
+          <div className="admin-email-input" title="Enviar correo">
+            <span className="admin-email-icon">✉️</span>
+            <input type="email" placeholder="prestamocom@up.edu.mx" />
+          </div>
+        </div>
       </footer>
     </div>
   );

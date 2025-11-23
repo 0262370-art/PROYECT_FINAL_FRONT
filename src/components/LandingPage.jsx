@@ -7,13 +7,27 @@ export default function LandingPage() {
   return (
     <div className="landing-root">
       <main className="landing-card">
+
         <section className="landing-buttons">
+
+          {/* STUDENT LOGIN */}
           <Link to="/students">
-            <button className="landing-btn">Login UP Students</button>
+            <button
+              className="landing-btn"
+              onClick={() => localStorage.setItem("role", "student")}
+            >
+              Login UP Students
+            </button>
           </Link>
 
+          {/* ADMIN LOGIN */}
           <Link to="/Admin">
-            <button className="landing-btn">Login Administrators</button>
+            <button
+              className="landing-btn"
+              onClick={() => localStorage.setItem("role", "admin")}
+            >
+              Login Administrators
+            </button>
           </Link>
 
         </section>

@@ -32,7 +32,14 @@
 
 /* Botones */
 .landing-btn {
-    padding: 2rem 6rem;
+    width: 320px;              /* ← MISMO ANCHO PARA AMBOS */
+    height: 75px;              /* ← MISMA ALTURA TAMBIÉN */
+    
+    padding: 0;                /* ← ya no depende del texto */
+    display: flex;             
+    justify-content: center;
+    align-items: center;
+
     border: 2px solid #3b4b6a;
     background-color: #ffffff;
     color: #3b4b6a;

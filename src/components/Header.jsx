@@ -47,6 +47,7 @@ export default function Header() {
 
   return (
     <header className="students-header">
+
       {/* HAMBURGUESA */}
       <button
         className="students-menu-btn"
@@ -68,13 +69,26 @@ export default function Header() {
         />
       </div>
 
-      {/* AVATAR ORIGINAL (FUNCIONA) */}
-      <button
-        className="students-avatar-btn"
-        onClick={() => navigate("/perfil")}
-      >
-        <div className="students-avatar" />
-      </button>
+      {/* AVATAR con detección de rol */}
+    <button
+  className="students-avatar-btn"
+  onClick={() => {
+    let role = localStorage.getItem("role");
+
+    console.log("ROLE ES:", role); // Debug
+
+    if (role === "admin") {
+      navigate("/admin-perfil");
+    } else if (role === "student") {
+      navigate("/student-perfil");
+    } else {
+      alert("No hay rol guardado en localStorage");
+    }
+  }}
+>
+  <div className="students-avatar" />
+</button>
+
 
       <Drawer anchor="left" open={menuOpen} onClose={toggleDrawer(false)}>
         {drawerContent}
