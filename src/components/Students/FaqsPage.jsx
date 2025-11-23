@@ -1,9 +1,9 @@
 // src/components/FaqsPage.jsx
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
-import "../StudentsPage.css";
-import "../FAQPage.css";
+import Header from "../Header";
+import "../../StudentsPage.css";
+import "../../FAQPage.css";
 
 export default function FaqsPage() {
   const navigate = useNavigate();

@@ -1,16 +1,16 @@
 // src/App.jsx
 import { Routes, Route } from "react-router-dom";
 import LandingPage from "./components/LandingPage";
-import StudentsPage from "./components/StudentsPage";
-import AdminPage from "./components/AdminPage";
-import ReservarEquipoPage from "./components/ReservarEquipoPage";
-import ReservarSalonesPage from "./components/ReservarSalonesPage";
-import MisReservasPage from "./components/MisReservasPage";
-import FaqsPage from "./components/FaqsPage";
-import StudentProfile from "./components/StudentProfile";
-import AdminDetallesPeticiones from "./components/AdminDetallesPeticiones";
-import AdminPeticiones from "./components/AdminPeticiones";
-import AdminProfilePage from "./components/AdminProfilePage";
+import AdminPage from "./components/Admin//AdminPage";
+import ReservarEquipoPage from "./components/Students/ReservarEquipoPage";
+import ReservarSalonesPage from "./components/Students//ReservarSalonesPage";
+import MisReservasPage from "./components/Students//MisReservasPage";
+import FaqsPage from "./components/Students/FaqsPage";
+import StudentProfile from "./components/Students/StudentProfile";
+import AdminDetallesPeticiones from "./components/Admin/AdminDetallesPeticiones";
+import AdminPeticiones from "./components/Admin/AdminPeticiones";
+import AdminProfilePage from "./components/Admin/AdminProfilePage";
+import StudentsPage from "./components/Students/StudentsPage";
 function App() {
   return (
     <Routes>

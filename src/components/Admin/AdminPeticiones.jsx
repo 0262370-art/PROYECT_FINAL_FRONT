@@ -1,11 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../AdminPeticiones.css";
-import Header from "./Header";
+import "../../AdminPeticiones.css";
+import Header from "../Header";
 
 // IMPORTA TODAS LAS IMÁGENES CORRECTAMENTE
 
-import userIcon from "../assets/user-icon.svg";
+import userIcon from "../../assets/user-icon.svg";
 
 export default function AdminPeticiones() {
   const navigate = useNavigate();

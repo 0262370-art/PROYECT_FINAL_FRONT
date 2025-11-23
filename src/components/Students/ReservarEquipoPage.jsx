@@ -1,15 +1,15 @@
 // src/components/ReservarEquipoPage.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
-import "../StudentsPage.css"; // reutiliza estilos de layout/header
-import "../ReservarEquipoPage.css";
-import cam1 from "../assets/cam1.png";
-import cam2 from "../assets/cam2.png";
-import cam3 from "../assets/cam3.png";
-import cam4 from "../assets/cam4.png";
-import cam5 from "../assets/cam5.png";
-import cam6 from "../assets/cam6.png";
+import Header from "../Header";
+import "../../StudentsPage.css"; // reutiliza estilos de layout/header
+import "../../ReservarEquipoPage.css";
+import cam1 from "../../assets/cam1.png";
+import cam2 from "../../assets/cam2.png";
+import cam3 from "../../assets/cam3.png";
+import cam4 from "../../assets/cam4.png";
+import cam5 from "../../assets/cam5.png";
+import cam6 from "../../assets/cam6.png";
 
 export default function ReservarEquipoPage() {
 	const navigate = useNavigate();

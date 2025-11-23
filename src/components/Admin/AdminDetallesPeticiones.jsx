@@ -1,8 +1,8 @@
 import { useNavigate, useParams } from "react-router-dom";
-import "../AdminPeticionesDetalles.css";
-import logoUP from "../assets/logoUP.png";
-import userIcon from "../assets/user-icon.svg";
-import cam5 from "../assets/cam5.png";
+import "../../AdminPeticionesDetalles.css";
+import logoUP from "../../assets/logoUP.png";
+import userIcon from "../../assets/user-icon.svg";
+import cam5 from "../../assets/cam5.png";
 
 
 export default function AdminPeticionesDetalles() {

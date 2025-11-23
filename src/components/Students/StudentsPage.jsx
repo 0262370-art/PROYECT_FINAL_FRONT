@@ -1,18 +1,18 @@
 // src/components/StudentsPage.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import "../StudentsPage.css";
-import Header from "./Header";
+import "../../StudentsPage.css";
+import Header from "../Header";
 
 // MUI
 // MUI imports moved into Header component
 
 // IMPORTA TUS IMÁGENES REALES AQUÍ
-import heroImg from "../assets/bannergrande.png";        // banner grande
-import cardEquip from "../assets/reservaequipo.png";     // reservar equipo
-import cardSalon from "../assets/reservasalones.png";    // reservar salones
-import cardMisRes from "../assets/misreservas.png";      // mis reservas
-import cardFaq from "../assets/FAQS.png";                // FAQs
+import heroImg from "../../assets/bannergrande.png";     // banner grande
+import cardEquip from "../../assets/reservaequipo.png";     // reservar equipo
+import cardSalon from "../../assets/reservasalones.png";    // reservar salones
+import cardMisRes from "../../assets/misreservas.png";      // mis reservas
+import cardFaq from "../../assets/FAQS.png";                // FAQs
 
 export default function StudentsPage() {
 

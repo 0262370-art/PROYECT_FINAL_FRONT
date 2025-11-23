@@ -1,9 +1,9 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import "../AdminProfilePage.css";
+import "../../AdminProfilePage.css";
 
 // Avatar default (MISMO que estudiante)
-import avatarPlaceholder from "../assets/user-icon.svg";
+import avatarPlaceholder from "../../assets/user-icon.svg";
 
 export default function AdminProfilePage() {
   const navigate = useNavigate();

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import avatarPlaceholder from "../assets/user-icon.svg"; 
-import "../StudentProfile.css";
+import avatarPlaceholder from "../../assets/user-icon.svg"; 
+import "../../StudentProfile.css";
 
 export default function StudentProfile() {
   const navigate = useNavigate();

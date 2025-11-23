@@ -1,10 +1,10 @@
-// src/components/ReservarSalonesPage.jsx
+// src/components/MisReservasPage.jsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
-import Header from "./Header";
-import "../StudentsPage.css"; // reutiliza estilos de layout/header
+import Header from "../Header";
+import "../../StudentsPage.css"; // reutiliza estilos de layout/header
 
-export default function ReservarSalonesPage() {
+export default function MisReservasPage() {
   const navigate = useNavigate();
 
   return (
