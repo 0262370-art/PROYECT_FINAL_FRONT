@@ -274,6 +274,12 @@
     font-size: 0.9rem;
 }
 
+.admin-email-input .admin-email-text {
+  color: #8b0020;
+  font-size: 0.9rem;
+  user-select: text;
+}
+
 /* Botón de volver  */
 .admin-back-btn {
     background: none;

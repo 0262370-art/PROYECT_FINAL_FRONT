@@ -93,7 +93,7 @@ export default function StudentsPage() {
         <div className="admin-footer-right">
           <div className="admin-email-input" title="Enviar correo">
             <span className="admin-email-icon">✉️</span>
-            <input type="email" placeholder="prestamocom@up.edu.mx" />
+            <span className="admin-email-text">prestamocom@up.edu.mx</span>
           </div>
         </div>
       </footer>

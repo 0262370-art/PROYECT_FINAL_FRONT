@@ -274,6 +274,12 @@
     font-size: 0.9rem;
 }
 
+.students-email-input .students-email-text {
+  color: #8b0020;
+  font-size: 0.9rem;
+  user-select: text;
+}
+
 /* Botón de volver  */
 .students-back-btn {
     background: none;

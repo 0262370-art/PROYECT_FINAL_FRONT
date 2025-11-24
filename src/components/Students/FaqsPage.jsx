@@ -90,7 +90,7 @@ export default function FaqsPage() {
         <div className="students-footer-right">
           <div className="students-email-input" title="Enviar correo">
             <span className="students-email-icon">✉️</span>
-            <input type="email" placeholder="prestamocom@up.edu.mx" />
+            <span className="students-email-text">prestamocom@up.edu.mx</span>
           </div>
         </div>
       </footer>
