@@ -25,7 +25,7 @@ export default function AdminPeticiones() {
   return (
     <div className="page-container">
       <Header />
- 
+
 
       {/* ------------ CONTENIDO ------------ */}
       <main className="content-area">
@@ -35,7 +35,12 @@ export default function AdminPeticiones() {
             <div key={id} className="petition-row">
 
               {/* Avatar */}
-              <div className="petition-avatar">
+              <div
+                className="petition-avatar"
+                onClick={() =>
+                  navigate(`/admin/alumno/${id}`, { state: { from: "peticiones" } })
+                }
+              >
                 <img src={userIcon} className="petition-avatar-img" alt="user" />
               </div>
 

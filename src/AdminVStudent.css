@@ -1,0 +1,160 @@
+/* ========================================================= */
+/* 🔶 HEADER (DORADO) */
+/* ========================================================= */
+.profile-header {
+  width: 100%;
+  height: 110px;
+  background: #b8864b;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+}
+
+/* ========================================================= */
+/* ⚪ ROOT CONTAINER */
+/* ========================================================= */
+.profile-root {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 60px 80px;
+  background: #f4eee3;
+  min-height: calc(100vh - 200px);
+  gap: 40px;
+}
+
+/* ========================================================= */
+/* 🔹 LEFT COLUMN */
+/* ========================================================= */
+.profile-left {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.profile-avatar-wrapper {
+  width: 380px;
+  height: 380px;
+}
+
+.profile-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.profile-name {
+  margin-top: 20px;
+  font-size: 32px;
+  font-weight: 600;
+  color: black;
+}
+
+/* ========================================================= */
+/* 🔹 RIGHT COLUMN */
+/* ========================================================= */
+.profile-right {
+  display: flex;
+  justify-content: center;
+}
+
+.profile-card {
+  width: 90%;
+  border-radius: 12px;
+  padding: 20px 25px;
+  border: 2px dashed #caa2ff;
+  background: #fff;
+}
+
+.profile-card-title {
+  text-align: center;
+  font-size: 24px;
+  padding: 15px;
+  border-radius: 8px;
+  background: #ffffff;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* BLOQUES */
+.profile-card-block {
+  background: #ffffff;
+  margin-bottom: 18px;
+  padding: 18px;
+  border-radius: 10px;
+  border: 1px solid #e0dbd3;
+}
+
+.profile-card-block-title {
+  font-size: 17px;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.profile-card-text {
+  font-size: 15px;
+  opacity: 0.75;
+}
+
+/* ========================================================= */
+/* 🔴 ADD WARNING BUTTON */
+/* ========================================================= */
+.warning-btn {
+  margin-top: 15px;
+  background: #d32f2f;
+  color: white;
+  border: none;
+  padding: 14px 26px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 600;
+  display: block;
+  margin-left: auto; /* se alinea a la derecha */
+}
+
+.warning-btn:hover {
+  background: #b71c1c;
+}
+
+/* ========================================================= */
+/* 🍷 FOOTER (TINTO) */
+/* ========================================================= */
+.profile-footer {
+  width: 100%;
+  height: 90px;
+  background: #7a0f24;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 40px;
+  color: white;
+}
+
+/* Back button */
+.footer-back {
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 26px;
+  cursor: pointer;
+}
+
+.footer-back:hover {
+  opacity: 0.7;
+}
+
+/* Logout */
+.footer-logout {
+  padding: 10px 20px;
+  background: white;
+  color: #7a0f24;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.footer-logout:hover {
+  background: #f8e6e9;
+}

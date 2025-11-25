@@ -64,7 +64,7 @@ export default function StudentsPage() {
           <article className="admin-card">
             <img src={cardMisRes} alt="Claqueta" />
             <div className="admin-card-footer">
-              <button onClick={handleNavigate("/mis-reservas")}>Perfiles »»</button>
+              <button onClick={handleNavigate("/admin/alumnos")}>Perfiles »»</button>
             </div>
           </article>
 

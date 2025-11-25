@@ -1,0 +1,55 @@
+.admin-students-page {
+  background: #f4eee3;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+/* Contenedor blanco */
+.admin-students-container {
+  padding: 40px 70px;
+  margin-top: -80px;
+}
+
+.admin-students-title {
+  color: #000;
+  font-size: 32px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  padding: 20px;
+}
+
+/* Lista */
+.admin-students-list {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.admin-student-row {
+  background: white;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-student-row:hover {
+  transform: translateY(-2px);
+  background: #fafafa;
+}
+
+.admin-student-avatar {
+  width: 60px;
+}
+
+.admin-student-name {
+  font-size: 20px;
+  color: black;
+}

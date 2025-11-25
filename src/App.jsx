@@ -11,6 +11,8 @@ import AdminDetallesPeticiones from "./components/Admin/AdminDetallesPeticiones"
 import AdminPeticiones from "./components/Admin/AdminPeticiones";
 import AdminProfilePage from "./components/Admin/AdminProfilePage";
 import StudentsPage from "./components/Students/StudentsPage";
+import AdminListaAlumnos from "./components/Admin/AdminListaAlumnos";
+import AdminVStudent from "./components/Admin/AdminVStudent";
 function App() {
   return (
     <Routes>
@@ -25,9 +27,13 @@ function App() {
       <Route path="/faqs" element={<FaqsPage />} />
       <Route path="/admin-peticiones" element={<AdminPeticiones />} />
       <Route path="/admin/petition/:id" element={<AdminDetallesPeticiones />} />
+      {/* lista */}
+      <Route path="/admin/alumnos" element={<AdminListaAlumnos />} />
 
+  {/* perfil dinámico */}
+      <Route path="/admin/alumno/:id" element={<AdminVStudent />} />
 
-
+    
 
     </Routes>
   );
