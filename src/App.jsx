@@ -14,6 +14,7 @@ import AdminProfilePage from "./components/Admin/AdminProfilePage";
 import StudentsPage from "./components/Students/StudentsPage";
 import AdminListaAlumnos from "./components/Admin/AdminListaAlumnos";
 import AdminVStudent from "./components/Admin/AdminVStudent";
+import CarritoReservasPage from "./components/Students/CarritoReservasPage";
 
 function App() {
   return (
@@ -34,6 +35,7 @@ function App() {
       <Route path="/faqs" element={<FaqsPage />} />
       <Route path="/admin-peticiones" element={<AdminPeticiones />} />
       <Route path="/admin/petition/:id" element={<AdminDetallesPeticiones />} />
+      <Route path="/carrito-reservas" element={<CarritoReservasPage />} />
 
       {/* lista */}
       <Route path="/admin/alumnos" element={<AdminListaAlumnos />} />

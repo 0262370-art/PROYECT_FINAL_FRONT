@@ -1,8 +1,8 @@
 // src/components/TerminosModal.jsx
 import React from "react";
-import "../StudentsPage.css"; // usamos el mismo css
+import "../StudentsPage.css";
 
-export default function TerminosModal({ open, onClose }) {
+export default function TerminosModal({ open, onClose, onAccept }) {
   if (!open) return null;
 
   return (
@@ -22,9 +22,25 @@ export default function TerminosModal({ open, onClose }) {
           </p>
         </div>
 
-        <button className="terminos-close-btn" onClick={onClose}>
-          Cerrar
-        </button>
+        <div style={{ display: "flex", gap: "10px", justifyContent: "flex-end" }}>
+          <button 
+            className="terminos-close-btn" 
+            onClick={onClose}
+            style={{ backgroundColor: "#e0e0e0" }} // Color gris para cancelar
+          >
+            Cancelar
+          </button>
+          
+          <button 
+            className="terminos-close-btn" 
+            onClick={() => {
+              onAccept();
+              onClose();
+            }}
+          >
+            Aceptar
+          </button>
+        </div>
       </div>
     </div>
   );

@@ -616,6 +616,7 @@ html, body {
   display: flex;
   flex-direction: column;
   gap: 0.9rem;
+  color: #000 !important;
 }
 
 .reserva-modal h2 {
@@ -635,6 +636,9 @@ html, body {
   border-radius: 6px;
   border: 1px solid #ccc;
   font-size: 0.9rem;
+  color: #000;
+  background-color: #fff;
+  color-scheme: light;
 }
 
 .reserva-modal-actions {
@@ -672,6 +676,7 @@ html, body {
   overflow-y: auto;
   box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
   animation: fadeIn 0.18s ease-out;
+  color: #000 !important;
 }
 
 .terminos-modal h2 {

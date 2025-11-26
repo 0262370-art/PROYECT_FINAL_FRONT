@@ -129,6 +129,7 @@
   border-radius: 10px;
   padding: 1.5rem;
   box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+  color: #000;
 }
 
 .reservar-detalle-buttons-row {
@@ -146,6 +147,8 @@
   cursor: pointer;
   font-size: 0.9rem;
   box-shadow: 0 2px 6px rgba(0,0,0,0.15);
+  color: #000 !important; 
+  font-weight: 600;
 }
 
 .reservar-detalle-btn-secondary {
@@ -160,4 +163,114 @@
   color: #333;
   cursor: pointer;
   font-size: 0.9rem;
+}
+
+.success-box {
+  background-color: #345282; /* Azul oscuro */
+  color: #ffffff !important;
+  font-size: 1.6rem;
+  text-align: center;
+  padding: 4rem 2rem;
+  border-radius: 4px;
+  /* Un pequeño efecto curvo abajo para imitar la ola */
+  border-bottom-left-radius: 20% 10%;
+  border-bottom-right-radius: 50% 20%;
+  margin-bottom: 2rem;
+  min-height: 220px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.success-buttons-row {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.success-btn {
+  background-color: #e8eaf0;
+  color: #345282 !important;
+  border: none;
+  padding: 1rem 1.5rem;
+  border-radius: 6px;
+  font-weight: 600;
+  cursor: pointer;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.success-btn:hover {
+  background-color: #dbe0eb;
+}
+
+/* src/ReservarEquipoPage.css */
+
+/* ... tus estilos anteriores ... */
+
+/* CONTADOR DE CANTIDAD */
+.quantity-container {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+  background: #ffffff;
+  padding: 0.5rem;
+  border-radius: 6px;
+  width: fit-content;
+  border: 1px solid #ccc;
+}
+
+.quantity-label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #333;
+  margin-right: 0.5rem;
+}
+
+.qty-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 4px;
+  border: 1px solid #345b9c;
+  background-color: #fff;
+  color: #345b9c;
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.qty-btn:hover:not(:disabled) {
+  background-color: #345b9c;
+  color: white;
+}
+
+.qty-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+  border-color: #ccc;
+  color: #ccc;
+}
+
+.qty-value {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #000;
+  min-width: 20px;
+  text-align: center;
+}
+
+.stock-info {
+  font-size: 0.8rem;
+  color: #666;
+  margin-left: 0.5rem;
 }
