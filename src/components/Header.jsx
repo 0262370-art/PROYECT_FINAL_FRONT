@@ -13,6 +13,13 @@ export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const navigate = useNavigate();
 
+  const storedUser = JSON.parse(localStorage.getItem("user") || "null");
+  const initialPic = storedUser?.picture || null;
+  const userName = storedUser?.name || "Usuario";
+
+  // 🔹 estado local del avatar en el header
+  const [avatarUrl, setAvatarUrl] = useState(initialPic);
+
   const toggleDrawer = (open) => () => {
     setMenuOpen(open);
   };
@@ -45,9 +52,20 @@ export default function Header() {
     </Box>
   );
 
+  const handleProfileClick = () => {
+    const role = localStorage.getItem("role");
+
+    if (role === "admin") {
+      navigate("/admin-perfil");
+    } else if (role === "student") {
+      navigate("/student-perfil");
+    } else {
+      alert("No hay rol guardado. Inicia sesión de nuevo 🙂");
+    }
+  };
+
   return (
     <header className="students-header">
-
       {/* HAMBURGUESA */}
       <button
         className="students-menu-btn"
@@ -69,26 +87,24 @@ export default function Header() {
         />
       </div>
 
-      {/* AVATAR con detección de rol */}
-    <button
-  className="students-avatar-btn"
-  onClick={() => {
-    let role = localStorage.getItem("role");
-
-    console.log("ROLE ES:", role); // Debug
-
-    if (role === "admin") {
-      navigate("/admin-perfil");
-    } else if (role === "student") {
-      navigate("/student-perfil");
-    } else {
-      alert("No hay rol guardado en localStorage");
-    }
-  }}
->
-  <div className="students-avatar" />
-</button>
-
+      {/* AVATAR HEADER */}
+      <button
+        className="students-avatar-btn"
+        onClick={handleProfileClick}
+        title={userName}
+      >
+        {avatarUrl ? (
+          <img
+            src={avatarUrl}
+            alt={userName}
+            className="students-avatar-img"
+            referrerPolicy="no-referrer"
+            onError={() => setAvatarUrl(null)} // 👈 si falla, usa monito negro
+          />
+        ) : (
+          <div className="students-avatar" />
+        )}
+      </button>
 
       <Drawer anchor="left" open={menuOpen} onClose={toggleDrawer(false)}>
         {drawerContent}

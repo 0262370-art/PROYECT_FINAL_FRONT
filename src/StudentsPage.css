@@ -356,41 +356,6 @@ html, body {
   gap: 1.5rem;
 }
 
-/* avatar grande tipo ícono */
-
-.profile-avatar-big {
-  width: 230px;
-  height: 230px;
-  border-radius: 50%;
-  border: 30px solid #000;
-  box-sizing: border-box;
-  position: relative;
-}
-
-.profile-avatar-big::before {
-  content: "";
-  position: absolute;
-  top: 45px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 110px;
-  height: 110px;
-  border-radius: 50%;
-  background: #f4eee3;
-}
-
-.profile-avatar-big::after {
-  content: "";
-  position: absolute;
-  bottom: 30px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 180px;
-  height: 90px;
-  border-radius: 0 0 999px 999px;
-  background: #000;
-}
-
 /* texto “Detalles del perfil” */
 
 .profile-details {
@@ -597,3 +562,157 @@ html, body {
   padding: 0;
   cursor: pointer;
 }
+
+.students-avatar-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.students-avatar-img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+
+/* ==== PÁGINAS CON FOOTER FIJO (ReservarEquipoPage) ==== */
+
+.students-root-fixed-footer {
+  padding-bottom: var(--footer-h); /* espacio para que el contenido no quede tapado */
+}
+
+.students-root-fixed-footer .students-footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 20;
+}
+
+/* ===== MODAL CALENDARIO RESERVAS ===== */
+
+.reserva-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.reserva-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.5rem 1.8rem;
+  width: 340px;
+  max-width: 90vw;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+}
+
+.reserva-modal h2 {
+  margin: 0 0 0.3rem;
+  font-size: 1.1rem;
+}
+
+.reserva-modal-label {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  gap: 0.25rem;
+}
+
+.reserva-modal-input {
+  padding: 0.45rem 0.6rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  font-size: 0.9rem;
+}
+
+.reserva-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.6rem;
+  margin-top: 0.4rem;
+}
+
+.reserva-modal-btn {
+  border: none;
+  border-radius: 6px;
+  padding: 0.45rem 0.8rem;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+.reserva-modal-btn.cancel {
+  background: #e0e0e0;
+}
+
+.reserva-modal-btn.confirm {
+  background: #c4d4ff;
+}
+
+/* ===== MODAL TÉRMINOS Y CONDICIONES ===== */
+
+.terminos-modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 1.8rem;
+  width: 420px;
+  max-width: 92vw;
+  max-height: 80vh;
+  overflow-y: auto;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.25);
+  animation: fadeIn 0.18s ease-out;
+}
+
+.terminos-modal h2 {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.terminos-content {
+  font-size: 0.92rem;
+  color: #3d3d3d;
+  line-height: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.terminos-close-btn {
+  width: 100%;
+  background: #c4d4ff;
+  color: #1f1f1f;
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.terminos-close-btn:hover {
+  background: #b7c9ff;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+
+
+
+
+
+
+
