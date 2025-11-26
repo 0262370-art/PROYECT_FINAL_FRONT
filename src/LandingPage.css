@@ -84,3 +84,8 @@
         align-items: center;
     }
 }
+
+.landing-btn--active {
+  outline: 2px solid #000;
+  transform: scale(1.02);
+}
