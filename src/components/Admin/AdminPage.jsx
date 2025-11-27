@@ -49,7 +49,7 @@ export default function StudentsPage() {
             <div className="admin-card-footer">
               {/*este boton al darle click te va a llevar a la pagina de reservar equipo*/}
               <button onClick={handleNavigate("/admin-peticiones")}> 
-                Reservar Peticiones »»
+                Revisar Peticiones »»
               </button>
             </div>
           </article>
