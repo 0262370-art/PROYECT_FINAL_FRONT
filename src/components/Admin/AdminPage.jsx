@@ -12,7 +12,7 @@ import heroImg from "../../assets/bannergrande.png";        // banner grande
 import cardEquip from "../../assets/reservaequipo.png";     // reservar equipo
 import cardSalon from "../../assets/reservasalones.png";    // reservar salones
 import cardMisRes from "../../assets/misreservas.png";      // mis reservas
-import cardFaq from "../../assets/FAQS.png";                // FAQs
+import cardClass from "../../assets/salon1.jpg";                // FAQs
 
 export default function StudentsPage() {
 
@@ -57,7 +57,7 @@ export default function StudentsPage() {
           <article className="admin-card">
             <img src={cardSalon} alt="Set de grabación" />
             <div className="admin-card-footer">
-              <button onClick={handleNavigate("/reservar-salones")}> Agregar productos »»</button>
+              <button onClick={handleNavigate("/Admin-AgregarProducto")}> Agregar productos »»</button>
             </div>
           </article>
 
@@ -69,9 +69,9 @@ export default function StudentsPage() {
           </article>
 
           <article className="admin-card">
-            <img src={cardFaq} alt="Frequent Asked Questions" />
+            <img src={cardClass} alt="Classroom" />
             <div className="admin-card-footer">
-              <button onClick={handleNavigate("/faqs")}>Agregar salones »»</button>
+              <button onClick={handleNavigate("/Admin-AgregarSalones")}>Agregar salones »»</button>
             </div>
           </article>
         </section>

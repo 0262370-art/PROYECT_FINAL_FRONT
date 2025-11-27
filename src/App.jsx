@@ -15,6 +15,8 @@ import StudentsPage from "./components/Students/StudentsPage";
 import AdminListaAlumnos from "./components/Admin/AdminListaAlumnos";
 import AdminVStudent from "./components/Admin/AdminVStudent";
 import CarritoReservasPage from "./components/Students/CarritoReservasPage";
+import AgregarProducto from "./components/Admin/AgregarProducto";
+import AgregarSalones from "./components/Admin/AgregarSalones";
 
 function App() {
   return (
@@ -24,6 +26,8 @@ function App() {
       <Route path="/student-perfil" element={<StudentProfile />} />
       <Route path="/admin-perfil" element={<AdminProfilePage />} />
       <Route path="/Admin" element={<AdminPage />} />
+      <Route path="/Admin-AgregarProducto" element={<AgregarProducto/>} />
+       <Route path="/Admin-AgregarSalones" element={<AgregarSalones/>} />
 
       <Route path="/reservar-equipo" element={<ReservarEquipoPage />} />
       <Route path="/reservar-equipo/:id" element={<ReservarEquipoDetalle />} /> {/* 👈 NUEVA */}

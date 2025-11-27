@@ -1,0 +1,201 @@
+/* ROOT */
+.agregar-root {
+  background: #f5efe4;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* GRID */
+.agregar-main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.agregar-grid {
+  margin-top: 40px;
+  width: 85%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 260px));
+  justify-content: center;
+  gap: 30px;
+}
+
+
+/* CARD */
+.agregar-card {
+  background: #fff;
+  border-radius: 12px;
+  width: 260px;
+  height: 320px;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.15);
+}
+
+
+.agregar-img-box {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.agregar-img-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+
+.agregar-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-top: auto;
+  color: black;
+}
+
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.edit-btn, .delete-btn {
+  padding: 5px 10px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.edit-btn { background: #c29143; color: white; }
+.delete-btn { background: #b11414; color: white; }
+
+/* CARD ADD */
+.new-card {
+  width: 260px;
+  height: 320px;
+  background: #006b1f;
+  border-radius: 12px;
+  color: white;
+  font-size: 3rem;
+  cursor: pointer;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+}
+
+
+/* FOOTER */
+.agregar-footer {
+  background: #8c0025;
+  color: white;
+  padding: 10px 20px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-back {
+  cursor: pointer;
+  margin-right: 10px;
+}
+
+.footer-email {
+  background: white;
+  color: black;
+  padding: 5px 10px;
+  border-radius: 12px;
+}
+
+/* MODAL */
+.modal-overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal {
+  width: 60%;
+  background: white;
+  border-radius: 12px;
+  display: flex;
+  gap: 25px;
+  padding: 35px;
+}
+
+.modal-left img {
+  width: 280px;
+  border-radius: 12px;
+}
+
+.modal-right {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal-right label {
+  font-size: 0.9rem;
+  margin-top: 8px;
+}
+
+input, textarea {
+  width: 100%;
+  border: 2px solid #c29143;
+  border-radius: 8px;
+  padding: 8px;
+  margin-top: 3px;
+}
+
+textarea {
+  height: 80px;
+  resize: none;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 15px;
+}
+
+.save-btn {
+  background: #1b7515;
+  color: white;
+}
+.cancel-btn {
+  background: #990000;
+  color: white;
+}
+
+/* CONFIRM DELETE */
+.confirm-box {
+  background: white;
+  color:#000;
+  padding: 25px;
+  border-radius: 12px;
+  text-align:center;
+}
+
+.confirm-actions button {
+  margin: 10px;
+  padding: 8px 18px;
+  border-radius: 10px;
+  border: none;
+  font-weight: bold;
+}
+.yes-btn { background: #c20000; color:white; }
+.no-btn { background: #ccc; color:black; }

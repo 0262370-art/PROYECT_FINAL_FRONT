@@ -50,7 +50,6 @@ export default function AdminPeticionesDetalles() {
             <p><strong>Producto Solicitado:</strong> Cámara Sony A7S</p>
             <p><strong>Solicitado Por:</strong> Estudiante {id}</p>
             <p><strong>Fechas:</strong> 10 - 12 Febrero</p>
-            <p><strong>Motivo:</strong> Grabación para proyecto final</p>
           </div>
 
         </div>
